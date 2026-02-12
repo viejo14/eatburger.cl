@@ -1,0 +1,16 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.eatburger.cl"
+        }
+      ],
+      "destination": "https://eatburger.cl/:path*",
+      "permanent": true
+    }
+  ]
+}
+
