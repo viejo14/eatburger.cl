@@ -13,6 +13,23 @@ export default function Footer({ text }) {
             decoding="async"
           />
           <p className="font-body text-sm text-brand-muted">{text}</p>
+          <a
+            href="https://syrtix.com"
+            target="_blank"
+            rel="noreferrer"
+            className="group mt-1 inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-white/5 px-3 py-1.5 text-xs text-brand-muted transition hover:border-brand-primary/70 hover:bg-brand-primary/10 hover:text-white"
+          >
+            <img
+              src="/images/img-logo-syrtix.png"
+              alt="Syrtix"
+              className="h-5 w-auto rounded-sm object-contain"
+              loading="lazy"
+              decoding="async"
+            />
+            <span className="font-body">
+              Pagina creada por <span className="font-semibold text-brand-primary transition group-hover:text-brand-primaryStrong">syrtix.com</span>
+            </span>
+          </a>
         </div>
         <div className="flex items-center gap-3">
           <a

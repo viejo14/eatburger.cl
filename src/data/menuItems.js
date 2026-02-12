@@ -6,7 +6,7 @@ export const menuItems = [
     description: "Doble carne, queso cheddar, tomate fresco y salsa de la casa.",
     descriptionEn: "Double beef, cheddar cheese, fresh tomato, and house sauce.",
     price: 8990,
-    image: "/images/menu-1.jpg",
+    image: "/images/burger1.png",
     badge: "Top"
   },
   {
@@ -16,7 +16,7 @@ export const menuItems = [
     description: "Bacon crocante, cebolla caramelizada y BBQ ahumada.",
     descriptionEn: "Crispy bacon, caramelized onion, and smoky BBQ sauce.",
     price: 10990,
-    image: "/images/menu-2.jpg",
+    image: "/images/burger2.png",
     badge: "Nuevo"
   },
   {
@@ -26,7 +26,7 @@ export const menuItems = [
     description: "Picante justo con jalapenos, pepper jack y mayo chipotle.",
     descriptionEn: "Balanced heat with jalapenos, pepper jack, and chipotle mayo.",
     price: 11990,
-    image: "/images/menu-3.jpg",
+    image: "/images/burger3.png",
     badge: "Hot"
   },
   {
@@ -36,7 +36,7 @@ export const menuItems = [
     description: "Triple carne smash, doble queso y pepinillos crujientes.",
     descriptionEn: "Triple smash patties, double cheese, and crunchy pickles.",
     price: 12990,
-    image: "/images/menu-4.jpg",
+    image: "/images/burger4.png",
     badge: "Power"
   },
   {
@@ -46,7 +46,7 @@ export const menuItems = [
     description: "Blend de quesos fundidos sobre carne jugosa y pan brioche.",
     descriptionEn: "Melted cheese blend over juicy beef and brioche bun.",
     price: 9990,
-    image: "/images/menu-5.jpg",
+    image: "/images/burger5.png",
     badge: "Cheese"
   },
   {
@@ -56,7 +56,7 @@ export const menuItems = [
     description: "Aros de cebolla, queso suizo y salsa honey mustard.",
     descriptionEn: "Onion rings, swiss cheese, and honey mustard sauce.",
     price: 10990,
-    image: "/images/menu-6.jpg",
+    image: "/images/burger6.png",
     badge: "Crunch"
   },
   {

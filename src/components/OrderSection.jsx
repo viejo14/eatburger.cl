@@ -15,17 +15,18 @@ const applyFallback = (event) => {
 
 export default function OrderSection({ locale, t }) {
   return (
-    <section id="pedido" className="relative overflow-hidden py-24">
+    <section id="pedido" className="relative isolate overflow-hidden py-24">
       <img
-        src="/images/order-bg.jpg"
+        src="/images/img-hamburgesas-fondo.png"
         alt="Burger kitchen background"
         onError={applyFallback}
-        className="absolute inset-0 -z-20 h-full w-full object-cover"
+        className="absolute inset-0 z-0 h-full w-full scale-[1.04] object-cover object-center [filter:brightness(0.72)_contrast(1.12)_saturate(1.16)] md:scale-105 md:object-[center_32%]"
       />
-      <div className="absolute inset-0 -z-10 bg-black/70" />
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-section-fire" />
+      <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_74%_14%,rgba(242,163,32,0.26),transparent_42%),linear-gradient(112deg,rgba(0,0,0,0.86)_0%,rgba(0,0,0,0.52)_48%,rgba(0,0,0,0.72)_100%)]" />
+      <div className="pointer-events-none absolute inset-0 z-20 bg-[radial-gradient(circle_at_50%_100%,rgba(255,112,38,0.22),transparent_60%)]" />
+      <div className="pointer-events-none absolute inset-0 z-20 bg-section-fire opacity-50" />
 
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-30 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

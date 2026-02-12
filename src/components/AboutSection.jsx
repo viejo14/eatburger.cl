@@ -1,30 +1,13 @@
 import { motion } from "framer-motion";
 import SectionTitle from "./common/SectionTitle";
 
-const ABOUT_BG_FALLBACK =
-  "https://images.unsplash.com/photo-1513639776629-7b61b0ac49cb?auto=format&fit=crop&w=1800&q=80";
-
-const applyFallback = (event) => {
-  const image = event.currentTarget;
-  if (!image.dataset.fallbackApplied) {
-    image.dataset.fallbackApplied = "1";
-    image.src = ABOUT_BG_FALLBACK;
-  }
-};
-
 export default function AboutSection({ t }) {
   return (
-    <section id="nosotros" className="relative overflow-hidden py-24">
-      <img
-        src="/images/about-bg.jpg"
-        alt="Team preparing burgers"
-        onError={applyFallback}
-        className="absolute inset-0 -z-20 h-full w-full object-cover"
-      />
-      <div className="absolute inset-0 -z-10 bg-black/72" />
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-section-fire" />
+    <section id="nosotros" className="relative isolate overflow-hidden py-24">
+      <div className="absolute inset-0 z-10 bg-black/62" />
+      <div className="pointer-events-none absolute inset-0 z-10 bg-section-fire opacity-55" />
 
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-20 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}

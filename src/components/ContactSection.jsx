@@ -12,7 +12,7 @@ const INITIAL_FORM = {
 
 const isValidEmail = (value) => /[^\s@]+@[^\s@]+\.[^\s@]+/.test(value);
 
-export default function ContactSection({ t }) {
+export default function ContactSection({ t, locale, onDemoRedirect }) {
   const [formData, setFormData] = useState(INITIAL_FORM);
   const [status, setStatus] = useState({ type: "idle", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -35,6 +35,13 @@ export default function ContactSection({ t }) {
 
     if (!isValidEmail(email)) {
       setStatus({ type: "error", message: t.contact.invalidEmail });
+      return;
+    }
+
+    if (onDemoRedirect) {
+      setStatus({ type: "success", message: t.contact.demoRedirecting });
+      setFormData(INITIAL_FORM);
+      onDemoRedirect({ source: "contact_form", locale, formData });
       return;
     }
 
@@ -70,10 +77,16 @@ export default function ContactSection({ t }) {
   };
 
   return (
-    <section id="contacto" className="relative overflow-hidden py-24">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[rgba(12,4,2,0.72)] to-[rgba(4,2,1,0.95)]" />
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-section-fire" />
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="contacto" className="relative isolate overflow-hidden py-24">
+      <img
+        src="/images/llama.avif"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 z-0 h-full w-full object-cover object-center opacity-70"
+      />
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-[rgba(12,4,2,0.58)] to-[rgba(4,2,1,0.82)]" />
+      <div className="pointer-events-none absolute inset-0 z-10 bg-section-fire opacity-50" />
+      <div className="relative z-20 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 22 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -38,7 +38,14 @@ export const translations = {
       fail: "No pudimos enviar tu mensaje. Intentalo de nuevo.",
       endpointMissing: "Falta configurar VITE_FORMSPREE_ENDPOINT en el entorno.",
       required: "Completa todos los campos.",
-      invalidEmail: "Ingresa un email valido."
+      invalidEmail: "Ingresa un email valido.",
+      demoRedirecting: "Demo Syrtix: te redirigimos ahora por WhatsApp."
+    },
+    demoRedirect: {
+      title: "Te gusto esta web?",
+      message: "Este es un demo de Syrtix. Te redirigimos ahora para agendar.",
+      openNow: "Abrir ahora",
+      cancel: "Cancelar"
     },
     footer: "EatBurger. Sabor intenso en cada pedido."
   },
@@ -81,7 +88,14 @@ export const translations = {
       fail: "We could not send your message. Please try again.",
       endpointMissing: "VITE_FORMSPREE_ENDPOINT is missing in your environment.",
       required: "Please fill in all fields.",
-      invalidEmail: "Please enter a valid email."
+      invalidEmail: "Please enter a valid email.",
+      demoRedirecting: "Syrtix demo: redirecting you to WhatsApp now."
+    },
+    demoRedirect: {
+      title: "Do you like this website?",
+      message: "This is a Syrtix demo. We are redirecting you now to schedule.",
+      openNow: "Open now",
+      cancel: "Cancel"
     },
     footer: "EatBurger. Bold flavor in every order."
   }
