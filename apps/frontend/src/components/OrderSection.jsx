@@ -69,7 +69,7 @@ export default function OrderSection({ locale, t }) {
           transition={{ duration: 0.5, delay: 0.18 }}
           className="mt-10"
         >
-          <PrimaryButton as="a" href="#contacto">
+          <PrimaryButton as="a" href="#domicilio">
             {t.order.cta}
           </PrimaryButton>
         </motion.div>

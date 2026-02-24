@@ -21,8 +21,53 @@ const clpFormatter = new Intl.NumberFormat("es-CL", {
   maximumFractionDigits: 0
 });
 
+const normalizeUrl = (value) => {
+  const parsed = String(value || "").trim();
+  if (!parsed) {
+    return "";
+  }
+
+  if (parsed.startsWith("http://") || parsed.startsWith("https://")) {
+    return parsed;
+  }
+
+  return "";
+};
+
+const DEFAULT_PLATFORM_LINKS = {
+  ubereats: "https://www.ubereats.com/cl",
+  rappi: "https://www.rappi.cl",
+  pedidosya: "https://www.pedidosya.cl"
+};
+
+const resolvePlatformLink = (key, envValue) =>
+  normalizeUrl(envValue) || DEFAULT_PLATFORM_LINKS[key] || "";
+
 export default function MenuSection({ locale, t }) {
   const [selectedItem, setSelectedItem] = useState(null);
+  const deliveryPlatforms = [
+    {
+      id: "ubereats",
+      name: "Uber Eats",
+      href: resolvePlatformLink("ubereats", import.meta.env.VITE_UBEREATS_STORE_URL),
+      logo: "/images/logo-ubereat.webp",
+      alt: "Uber Eats logo"
+    },
+    {
+      id: "rappi",
+      name: "Rappi",
+      href: resolvePlatformLink("rappi", import.meta.env.VITE_RAPPI_STORE_URL),
+      logo: "/images/logo-rappi.jpg",
+      alt: "Rappi logo"
+    },
+    {
+      id: "pedidosya",
+      name: "PedidosYa",
+      href: resolvePlatformLink("pedidosya", import.meta.env.VITE_PEDIDOSYA_STORE_URL),
+      logo: "/images/logo-pedidosya.jpg",
+      alt: "PedidosYa logo"
+    }
+  ];
 
   useEffect(() => {
     if (!selectedItem) {
@@ -171,6 +216,31 @@ export default function MenuSection({ locale, t }) {
                     <p className="font-heading text-4xl text-brand-primary">
                       {clpFormatter.format(selectedItem.price)}
                     </p>
+                  </div>
+
+                  <div className="rounded-xl border border-white/10 bg-black/25 p-3">
+                    <p className="font-body text-sm font-semibold text-white">{t.menu.modalDeliveryTitle}</p>
+                    <p className="mt-1 font-body text-xs text-brand-muted">{t.menu.modalDeliverySubtitle}</p>
+                    <div className="mt-3 grid grid-cols-3 gap-2">
+                      {deliveryPlatforms.map((platform) => (
+                        <a
+                          key={platform.id}
+                          href={platform.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={platform.name}
+                          className="flex h-12 items-center justify-center rounded-md border border-white/20 bg-white/95 p-2 transition hover:border-brand-primary"
+                        >
+                          <img
+                            src={platform.logo}
+                            alt={platform.alt}
+                            className="h-full w-full object-contain"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        </a>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>

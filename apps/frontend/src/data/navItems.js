@@ -12,6 +12,12 @@ export const navItems = [
     labelEn: "Menu"
   },
   {
+    id: "domicilio",
+    href: "#domicilio",
+    label: "Domicilio",
+    labelEn: "Delivery"
+  },
+  {
     id: "nosotros",
     href: "#nosotros",
     label: "Sobre Nosotros",

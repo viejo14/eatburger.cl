@@ -12,13 +12,25 @@ export const translations = {
     menu: {
       eyebrow: "Sabores de la casa",
       title: "Descubre nuestro irresistible menu",
-      subtitle: "Combinaciones premium para antojos reales"
+      subtitle: "Combinaciones premium para antojos reales",
+      modalDeliveryTitle: "Quieres pedir a domicilio?",
+      modalDeliverySubtitle: "Elige tu app y continua tu pedido."
     },
     order: {
       titleA: "Haz tu pedido",
       titleB: "hoy",
       titleC: "y disfruta en grande",
       cta: "Ordena ahora"
+    },
+    delivery: {
+      eyebrow: "Compra a domicilio",
+      title: "Quieres pedir a domicilio?",
+      subtitle: "Elige tu app favorita y compra directo en nuestro perfil oficial.",
+      uberEatsDescription: "Pide por Uber Eats y recibe en minutos con despacho a domicilio.",
+      rappiDescription: "Compra en Rappi con despacho rapido y seguimiento en su plataforma.",
+      pedidosYaDescription: "Tambien estamos en PedidosYa para que pidas en pocos pasos.",
+      buyOn: "Comprar en {platform}",
+      linkMissing: "Falta configurar el link de {platform} en el entorno."
     },
     about: {
       title: "Sobre Nosotros",
@@ -28,6 +40,10 @@ export const translations = {
     contact: {
       title: "Contacto",
       subtitle: "Escribenos para reservas, eventos y pedidos corporativos.",
+      locationTitle: "Nuestra ubicacion",
+      locationLabel: "Direccion",
+      locationAddress: "Av. Fuego Burger 742, Local 5, Providencia, Santiago, Chile",
+      locationCta: "Ver en Google Maps",
       name: "Nombre",
       email: "Email",
       phone: "Telefono",
@@ -62,13 +78,25 @@ export const translations = {
     menu: {
       eyebrow: "House specialties",
       title: "Discover our irresistible menu",
-      subtitle: "Premium combinations made for real cravings"
+      subtitle: "Premium combinations made for real cravings",
+      modalDeliveryTitle: "Want delivery?",
+      modalDeliverySubtitle: "Pick your app and continue your order."
     },
     order: {
       titleA: "Place your order",
       titleB: "today",
       titleC: "and enjoy big",
       cta: "Order now"
+    },
+    delivery: {
+      eyebrow: "Delivery Apps",
+      title: "Want delivery?",
+      subtitle: "Choose your favorite app and buy directly from our official profile.",
+      uberEatsDescription: "Order on Uber Eats and get fast home delivery in minutes.",
+      rappiDescription: "Order on Rappi with fast delivery and in-app order tracking.",
+      pedidosYaDescription: "We are also on PedidosYa so you can order in just a few steps.",
+      buyOn: "Buy on {platform}",
+      linkMissing: "Missing {platform} URL in environment variables."
     },
     about: {
       title: "About Us",
@@ -78,6 +106,10 @@ export const translations = {
     contact: {
       title: "Contact",
       subtitle: "Send us a message for bookings, events, and business orders.",
+      locationTitle: "Our location",
+      locationLabel: "Address",
+      locationAddress: "742 Burger Fire Ave, Suite 5, Providencia, Santiago, Chile",
+      locationCta: "Open in Google Maps",
       name: "Name",
       email: "Email",
       phone: "Phone",

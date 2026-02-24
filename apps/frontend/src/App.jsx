@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import MenuSection from "./components/MenuSection";
 import OrderSection from "./components/OrderSection";
+import DeliveryPlatformsSection from "./components/DeliveryPlatformsSection";
 import AboutSection from "./components/AboutSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
@@ -117,6 +118,7 @@ export default function App() {
         <HeroSection t={t} />
         <MenuSection locale={locale} t={t} />
         <OrderSection locale={locale} t={t} />
+        <DeliveryPlatformsSection t={t} />
         <AboutSection t={t} />
         <ContactSection t={t} locale={locale} onDemoRedirect={handleDemoRedirect} />
       </main>
