@@ -35,7 +35,11 @@ export const translations = {
     about: {
       title: "Sobre Nosotros",
       text:
-        "En EatBurger cocinamos con tecnica y pasion. Cada receta busca equilibrio entre textura, jugosidad y sabor ahumado para entregarte una experiencia memorable."
+        "Todo comenzo con Matias, un joven estudiante de cocina y luego egresado de Inacap, que pasaba turnos eternos en cocinas ajenas mientras sonaba con tener su propio local.",
+      text2:
+        "Cansado de trabajar para otros, abrio un pequeno carrito de hamburguesas en la esquina de su barrio. Entre deudas, lluvias y jornadas sin descanso, defendio su sueno contra viento y marea hasta convertir EatBurger en su orgullo: recetas honestas, fuego real y sabor que se nota.",
+      imageAlt: "Dueno de EatBurger",
+      imageCaption: "Fundador de EatBurger"
     },
     contact: {
       title: "Contacto",
@@ -101,7 +105,11 @@ export const translations = {
     about: {
       title: "About Us",
       text:
-        "At EatBurger we cook with technique and passion. Every recipe balances texture, juiciness, and smoky flavor to deliver a memorable experience."
+        "EatBurger started with Matias, a young culinary student and Inacap graduate who worked long shifts in other kitchens while dreaming of opening his own place.",
+      text2:
+        "Tired of working for others, he launched a small burger stand in his neighborhood. Through debt, rain, and endless days, he fought for his dream and built EatBurger around honest recipes, live fire, and bold flavor.",
+      imageAlt: "EatBurger owner",
+      imageCaption: "EatBurger founder"
     },
     contact: {
       title: "Contact",

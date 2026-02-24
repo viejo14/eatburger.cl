@@ -81,15 +81,9 @@ export default function ContactSection({ t, locale, onDemoRedirect }) {
 
   return (
     <section id="contacto" className="relative isolate overflow-hidden py-24">
-      <img
-        src="/images/llama.avif"
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 z-0 h-full w-full object-cover object-center opacity-70"
-      />
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-[rgba(12,4,2,0.58)] to-[rgba(4,2,1,0.82)]" />
-      <div className="pointer-events-none absolute inset-0 z-10 bg-section-fire opacity-50" />
-      <div className="relative z-20 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="absolute inset-0 z-0 bg-transparent" />
+      <div className="pointer-events-none absolute inset-0 z-0 bg-section-fire opacity-50" />
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 22 }}
           whileInView={{ opacity: 1, y: 0 }}

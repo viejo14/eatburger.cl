@@ -104,28 +104,39 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-app-texture text-brand-text">
-      <a
-        href="#inicio"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-black"
-      >
-        {t.skipToContent}
-      </a>
+    <div className="relative min-h-screen text-brand-text">
+      <img
+        src="/images/img-burger2.webp"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-0 -z-30 h-full w-full object-cover object-center"
+      />
+      <div className="pointer-events-none fixed inset-0 -z-20 bg-[linear-gradient(180deg,rgba(0,0,0,0.72)_0%,rgba(10,3,2,0.80)_54%,rgba(0,0,0,0.86)_100%)]" />
+      <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_16%_8%,rgba(242,163,32,0.16),transparent_42%),radial-gradient(circle_at_82%_18%,rgba(255,78,33,0.14),transparent_40%)]" />
 
-      <Header locale={locale} navItems={navItems} onChangeLocale={setLocale} />
+      <div className="relative z-10">
+        <a
+          href="#inicio"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-black"
+        >
+          {t.skipToContent}
+        </a>
 
-      <main>
-        <HeroSection t={t} />
-        <MenuSection locale={locale} t={t} />
-        <OrderSection locale={locale} t={t} />
-        <DeliveryPlatformsSection t={t} />
-        <AboutSection t={t} />
-        <ContactSection t={t} locale={locale} onDemoRedirect={handleDemoRedirect} />
-      </main>
+        <Header locale={locale} navItems={navItems} onChangeLocale={setLocale} />
 
-      <WhatsAppButton locale={locale} onDemoRedirect={handleDemoRedirect} />
-      <DemoRedirectToast notice={demoNotice} onOpenNow={openNoticeNow} onClose={closeDemoNotice} />
-      <Footer text={t.footer} />
+        <main>
+          <HeroSection t={t} />
+          <MenuSection locale={locale} t={t} />
+          <OrderSection locale={locale} t={t} />
+          <DeliveryPlatformsSection t={t} />
+          <AboutSection t={t} />
+          <ContactSection t={t} locale={locale} onDemoRedirect={handleDemoRedirect} />
+        </main>
+
+        <WhatsAppButton locale={locale} onDemoRedirect={handleDemoRedirect} />
+        <DemoRedirectToast notice={demoNotice} onOpenNow={openNoticeNow} onClose={closeDemoNotice} />
+        <Footer text={t.footer} />
+      </div>
     </div>
   );
 }

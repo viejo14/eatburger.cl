@@ -92,14 +92,8 @@ export default function MenuSection({ locale, t }) {
   return (
     <>
       <section id="menu" className="relative isolate overflow-hidden py-24">
-        <div className="absolute inset-0 -z-30 bg-flame" />
-        <img
-          src="/images/llama.avif"
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 -z-20 h-full w-full object-cover object-center opacity-65"
-        />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(0,0,0,0.52)_0%,rgba(16,7,3,0.78)_48%,rgba(5,2,1,0.9)_100%)]" />
+        <div className="absolute inset-0 -z-30 bg-transparent" />
+        <div className="absolute inset-0 -z-10 bg-transparent" />
         <div className="pointer-events-none absolute inset-0 -z-10 bg-section-fire" />
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionTitle eyebrow={t.menu.eyebrow} title={t.menu.title} subtitle={t.menu.subtitle} align="center" />

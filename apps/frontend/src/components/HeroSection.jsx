@@ -1,56 +1,40 @@
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import PrimaryButton from "./common/PrimaryButton";
 
-const HERO_BG_FALLBACK =
-  "https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&w=2000&q=80";
-const HERO_BURGER_FALLBACK =
-  "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=80";
-
-const applyFallback = (event, fallbackUrl) => {
-  const image = event.currentTarget;
-  if (!image.dataset.fallbackApplied) {
-    image.dataset.fallbackApplied = "1";
-    image.src = fallbackUrl;
-  }
-};
-
 export default function HeroSection({ t }) {
-  const [offset, setOffset] = useState(0);
+  const pointerX = useMotionValue(0);
+  const pointerY = useMotionValue(0);
+  const smoothX = useSpring(pointerX, { stiffness: 170, damping: 22 });
+  const smoothY = useSpring(pointerY, { stiffness: 170, damping: 22 });
+  const rotateY = useTransform(smoothX, [-0.5, 0.5], [-14, 14]);
+  const rotateX = useTransform(smoothY, [-0.5, 0.5], [10, -10]);
 
-  useEffect(() => {
-    const onScroll = () => {
-      const next = Math.min(window.scrollY * 0.12, 26);
-      setOffset(next);
-    };
+  const handleMouseMove = (event) => {
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+    const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+    pointerX.set(x);
+    pointerY.set(y);
+  };
 
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const handleMouseLeave = () => {
+    pointerX.set(0);
+    pointerY.set(0);
+  };
 
   return (
     <section
       id="inicio"
-      className="relative min-h-[30rem] overflow-hidden pt-20 lg:h-[clamp(28rem,52vh,40rem)]"
+      className="relative min-h-[30rem] overflow-hidden pt-20 lg:h-[clamp(30rem,56vh,42rem)]"
     >
-      <img
-        src="/images/llama.avif"
-        alt="Llama background"
-        className="absolute inset-0 h-full w-full object-cover object-center brightness-[1.10] saturate-[1.16] contrast-[1.18]"
-        onError={(event) => applyFallback(event, HERO_BG_FALLBACK)}
-      />
-      <div className="absolute inset-0 bg-hero-cinematic" />
-      <div className="absolute inset-0 bg-hero-vignette" />
-      <div className="absolute inset-0 bg-overlay-dark" />
-      <div className="pointer-events-none absolute inset-0 bg-section-fire" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.34)_0%,rgba(0,0,0,0.56)_100%)]" />
 
-      <div className="relative mx-auto grid w-full max-w-7xl items-center gap-4 px-4 pb-4 pt-2 sm:gap-6 sm:px-6 sm:pb-6 sm:pt-3 lg:h-full lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-2 lg:px-8 lg:pt-0">
+      <div className="relative mx-auto grid h-full w-full max-w-7xl items-center gap-6 px-4 pb-8 pt-4 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:gap-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, x: -32 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.65, ease: "easeOut" }}
-          className="z-10 max-w-lg"
+          className="z-10 max-w-2xl"
         >
           <p className="mb-1 font-body text-xs font-semibold uppercase tracking-[0.24em] text-brand-primary sm:text-sm">
             EatBurger
@@ -77,19 +61,30 @@ export default function HeroSection({ t }) {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.88, x: 22 }}
-          animate={{ opacity: 1, scale: 1, x: 0 }}
-          transition={{ duration: 0.72, ease: "easeOut" }}
-          className="relative z-10 flex items-center justify-center"
-          style={{ transform: `translateY(${offset}px)` }}
+          initial={{ opacity: 0, x: 28, scale: 0.92 }}
+          animate={{ opacity: 1, x: 0, scale: 1 }}
+          transition={{ duration: 0.68, ease: "easeOut" }}
+          className="relative z-10 mx-auto w-full max-w-[34rem]"
+          style={{ perspective: 1200 }}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
         >
-          <div className="absolute bottom-4 h-56 w-56 animate-flame-pulse rounded-full bg-[rgba(242,163,32,0.35)] blur-[76px] sm:h-72 sm:w-72 lg:h-80 lg:w-80" />
-          <img
-            src="/images/burger7.png"
-            alt="EatBurger signature burger"
-            className="relative max-h-[280px] w-full max-w-[540px] object-contain drop-shadow-[0_26px_50px_rgba(0,0,0,0.65)] sm:max-h-[340px] lg:max-h-[390px] xl:max-h-[430px]"
-            onError={(event) => applyFallback(event, HERO_BURGER_FALLBACK)}
-          />
+          <div className="pointer-events-none absolute inset-x-12 bottom-10 h-20 " />
+          <motion.div
+            style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+            animate={{ y: [0, -12, 0] }}
+            transition={{ duration: 4.6, repeat: Infinity, ease: "easeInOut" }}
+            className="relative rounded-3xl p-3"
+          >
+            <div className="absolute inset-2 " />
+            <img
+              src="/images/img-burger/img-burger-hero.png"
+              alt="EatBurger signature burger"
+              className="relative w-full object-contain drop-shadow-[0_30px_55px_rgba(0,0,0,0.72)]"
+              loading="eager"
+              decoding="async"
+            />
+          </motion.div>
         </motion.div>
       </div>
     </section>

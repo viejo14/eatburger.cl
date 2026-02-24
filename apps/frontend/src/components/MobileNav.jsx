@@ -32,6 +32,14 @@ export default function MobileNav({ locale, navItems, isOpen, onClose, onChangeL
               <LanguageSwitcher locale={locale} onChange={onChangeLocale} compact />
             </div>
 
+            <a
+              href="/qr-scan"
+              onClick={onClose}
+              className="mt-6 inline-flex items-center justify-center rounded-md border border-brand-primary/70 bg-brand-primary/15 px-4 py-3 font-body text-sm font-bold uppercase tracking-[0.12em] text-brand-primary transition hover:bg-brand-primary hover:text-black"
+            >
+              {locale === "es" ? "QR Menu" : "QR Menu"}
+            </a>
+
             <ul className="mt-10 space-y-4">
               {navItems.map((item) => (
                 <li key={item.id}>

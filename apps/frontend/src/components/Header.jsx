@@ -61,7 +61,13 @@ export default function Header({ locale, navItems, onChangeLocale }) {
             </ul>
           </nav>
 
-          <div className="hidden md:flex">
+          <div className="hidden md:flex items-center gap-3">
+            <a
+              href="/qr-scan"
+              className="inline-flex items-center justify-center rounded-md border border-brand-primary/70 bg-brand-primary/15 px-4 py-2 font-body text-xs font-bold uppercase tracking-[0.12em] text-brand-primary transition hover:bg-brand-primary hover:text-black"
+            >
+              {locale === "es" ? "QR Menu" : "QR Menu"}
+            </a>
             <LanguageSwitcher locale={locale} onChange={onChangeLocale} />
           </div>
 

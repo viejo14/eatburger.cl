@@ -1,45 +1,23 @@
 import { motion } from "framer-motion";
-import { FiCheckCircle, FiSmartphone } from "react-icons/fi";
 
 const EATBURGER_LOGO = "/images/logo-eatburger.png";
 const MENU_QR_IMAGE = "/images/eatburger_menu_qr.png";
+const QR_BG_IMAGE = "/images/llama.avif";
 
 export default function QrScanSimulation() {
   return (
     <section className="relative isolate overflow-hidden py-20">
-      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_18%_10%,rgba(242,163,32,0.20),transparent_45%),radial-gradient(circle_at_82%_16%,rgba(255,78,33,0.16),transparent_42%),linear-gradient(180deg,#0d0402_0%,#140702_55%,#0a0301_100%)]" />
+      <img
+        src={QR_BG_IMAGE}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 -z-30 h-full w-full object-cover object-center"
+      />
+      <div className="absolute inset-0 -z-20 bg-[linear-gradient(180deg,rgba(0,0,0,0.82)_0%,rgba(12,4,2,0.84)_58%,rgba(0,0,0,0.88)_100%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_10%,rgba(242,163,32,0.22),transparent_45%),radial-gradient(circle_at_82%_16%,rgba(255,78,33,0.18),transparent_42%)]" />
       <div className="pointer-events-none absolute inset-0 -z-10 bg-section-fire opacity-45" />
 
-      <div className="mx-auto grid w-full max-w-6xl gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_0.9fr] lg:items-center lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.5 }}
-          className="rounded-2xl border border-white/15 bg-black/45 p-6 shadow-panel backdrop-blur-sm sm:p-8"
-        >
-          <div className="flex items-center gap-3">
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-brand-primary/45 bg-brand-primary/15 text-brand-primary">
-              <FiSmartphone size={20} />
-            </span>
-            <p className="font-body text-xs font-semibold uppercase tracking-[0.18em] text-brand-primary">
-              Escaneo QR
-            </p>
-          </div>
-
-          <h2 className="mt-4 font-heading text-3xl leading-tight text-white sm:text-4xl">
-            Escanea y abre el menu digital
-          </h2>
-          <p className="mt-3 max-w-xl font-body text-sm text-brand-muted sm:text-base">
-            Simulacion visual del escaneo QR para acceso rapido al menu de EatBurger.
-          </p>
-
-          <div className="mt-7 flex items-center gap-3 rounded-xl border border-white/10 bg-black/35 p-3">
-            <FiCheckCircle className="text-brand-primary" size={18} />
-            <p className="font-body text-sm text-brand-text">QR detectado correctamente.</p>
-          </div>
-        </motion.div>
-
+      <div className="mx-auto flex w-full max-w-6xl justify-center px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 26, scale: 0.98 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -78,7 +56,7 @@ export default function QrScanSimulation() {
             </div>
 
             <p className="mt-4 text-center font-body text-xs uppercase tracking-[0.14em] text-brand-primary">
-              Acerca tu camara al codigo
+              Escanea este QR y veras todos nuestros productos
             </p>
           </div>
         </motion.div>

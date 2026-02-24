@@ -62,7 +62,7 @@ export default function DeliveryPlatformsSection({ t }) {
 
   return (
     <section id="domicilio" className="relative isolate overflow-hidden py-24">
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_15%_16%,rgba(242,163,32,0.13),transparent_44%),radial-gradient(circle_at_86%_12%,rgba(255,70,70,0.14),transparent_40%),linear-gradient(180deg,#140702_0%,#0a0200_100%)]" />
+      <div className="absolute inset-0 z-0 bg-transparent" />
       <div className="pointer-events-none absolute inset-0 z-0 bg-section-fire opacity-35" />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
